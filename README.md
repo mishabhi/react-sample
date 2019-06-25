@@ -1,5 +1,32 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Run with docker
+
+### Terminal
+
+Local development:
+```
+docker-compose run deps && docker-compose up dev
+```
+
+Production:
+```
+docker-compose up --build prod
+```
+
+### Webstorm
+
+1. Open "Run/Debug Configurations" window
+2. Click `+` at top left corner
+3. Choose `Docker` → `docker-compose`
+4. Point to `docker-compose.yml` path in `Compose file(s)` field.
+5. Choose `npm install` name and write `deps` to `Service(s)` field
+6. Repeat from step 1 and create one more command called `npm start` with `dev` value in `Service(s)` field.
+7. (optionally) Repeat one time for `Build production image` command with `prod` value in `Service(s)` field.
+
+Each of those commands also can be called via green
+triangles pointing at according service name (`prod`, `deps` and `dev`) in opened `docker-compose.yml`.
+
 ## Available Scripts
 
 In the project directory, you can run:
